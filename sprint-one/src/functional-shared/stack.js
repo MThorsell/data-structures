@@ -2,7 +2,7 @@ var Stack = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
   var storage = {
-    // counter: 0
+    //counter: 0
   };
   storage.counter = 0;
   storage.size = stackMethods.size;
@@ -26,9 +26,9 @@ stackMethods.push = function(value) {
 
 stackMethods.pop = function() {
   if (this.counter > 0) {
+    this.counter--;
     var temp = this[this.counter];
     delete this[this.counter];
-    this.counter--;
     return temp;
   }
  
