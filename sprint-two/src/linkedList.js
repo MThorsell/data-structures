@@ -29,6 +29,8 @@ var LinkedList = function(){
 
   list.contains = function(target){
     //recursive function that terminates when we find the value or when .next === null
+    
+    // ** Consider cleanup.
     var goThroughList = function(curObj){
       if (curObj.value === target){
         return true;
@@ -55,4 +57,7 @@ var Node = function(value){
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ addToTail() is constant
+ removeHead() is constant
+ contains() is linear
  */
