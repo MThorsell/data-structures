@@ -75,6 +75,13 @@ Graph.prototype.forEachNode = function(cb){
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ addNode is constant time
+ contains is linear
+ removeNode is linear
+ addEdge is constant
+ hasEdge is linear
+ removeEdge is linear
+ forEachNode is linear
  */
 
 
