@@ -23,6 +23,15 @@ describe('linkedList', function() {
     expect(linkedList.tail.value).to.equal(5);
   });
 
+  // This is our new test!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  it('should designate a new head when removeHead is called', function() {
+    linkedList.addToTail(7);
+    linkedList.addToTail(8);
+    expect(linkedList.head.value).to.equal(7);
+    linkedList.removeHead();
+    expect(linkedList.head.value).to.equal(8);
+  });
+
   it('should remove the head from the list when removeHead is called', function(){
     linkedList.addToTail(4);
     linkedList.addToTail(5);
