@@ -28,7 +28,7 @@ describe('set', function() {
   it('should not add the same value twice', function(){
     set.add('hi');
     set.add('hi');
-    expect(set._storage.length).to.equal(1);
+    expect(set.length).to.equal(1);
   });  
 
 });
