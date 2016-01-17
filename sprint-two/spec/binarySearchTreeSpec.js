@@ -37,4 +37,11 @@ describe('binarySearchTree', function() {
     console.log(array);
     expect(array).to.eql([5,2,3]);
   });
+
+  it('should have a .left and .right property if it has two children', function(){
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(7);
+    expect(!!binarySearchTree.left).to.equal(true);
+    expect(!!binarySearchTree.right).to.equal(true);
+  });
 });

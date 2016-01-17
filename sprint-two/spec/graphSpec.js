@@ -59,4 +59,12 @@ describe('graph', function() {
     expect(graph.hasEdge('penguins', 'satsumas')).to.equal(true);
     expect(graph.hasEdge('satsumas', 'satsumas')).to.equal(true);
   });
+  
+  // This is our graphSpec test!
+  it('should allow nodes to have edges that point to themselves', function() {
+    graph.addNode('ourTestNode');
+    graph.addEdge('ourTestNode', 'ourTestNode');
+    expect(graph.hasEdge('ourTestNode', 'ourTestNode')).to.equal(true);
+  });
+  
 });
