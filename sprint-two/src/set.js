@@ -1,43 +1,39 @@
 var Set = function(){
   var set = Object.create(setPrototype);
-  set._storage = [];
+  set._storage = {};
+  set.length = 0;
   return set;
 };
 
 var setPrototype = {};
 
 setPrototype.add = function(item){
-  var found = false;
-  for (var i = 0; i < this._storage.length; i++){
-    if (this._storage[i] === item){
-      found = true;
-    }
+  if (this._storage[item] !== item){
+    this._storage[item] = item;
+    this.length++;
   }
-  if (found === false){
-    this._storage.push(item)
-  };
 };
 
 setPrototype.contains = function(item){
-  for (var i = 0; i < this._storage.length; i++) {
-    if (this._storage[i] === item) {
-      return true;
-    }
+  if (this._storage[item] === item){
+    return true;
   }
   return false;
 };
 
 setPrototype.remove = function(item){
-  for (var i = 0; i < this._storage.length; i++) {
-    if (this._storage[i] === item) {
-      this._storage.splice(i, 1);
-    }
+  if (this._storage[item] === item){
+    var temp = this._storage[item];
+    delete this._storage[item];
+    this.length--;
+    return temp;
   }
 };
 
-/*
- * Complexity: What is the time complexity of the above functions?
+
+ /* Complexity: What is the time complexity of the above functions?
  add is constant
- contains is linear
- remove is linear
- */
+ contains is constant
+ remove is constant*/
+ 
+ 
